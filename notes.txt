@@ -1,0 +1,2 @@
+Schedular command
+nircmd.exe exec hide "c:\cron\start.bat"
