@@ -1,13 +1,19 @@
 <?php require_once __DIR__.'/vendor/autoload.php';
 
 use GO\Scheduler;
-
+date_default_timezone_set('Asia/Karachi');
 // Create a new scheduler
 $scheduler = new Scheduler();
 //$scheduler->php('D:\xampp\htdocs\test2\index.php')->everyMinute();;
 $scheduler->raw('cd c:/xampp/htdocs/resource_planner && php artisan import',[],'RMO')->inForeground()->everyMinute();
 $scheduler->raw('cd c:/xampp/htdocs/support_sla && php artisan sync:database',[],'SUPPORT')->inForeground()->everyMinute();
-$scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:calendar',[],'Sprint Calendar')->inForeground()->hourly();
+$scheduler->raw('cd c:/xampp/htdocs/localshipments && php artisan sync',[],'LOCALSHIPMENTS')->inForeground()->everyMinute();
+$scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:calendar',[],'Sprint Calendar')->inForeground()->everyMinute();
+$scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:risk',[],'Risk Calendar')->inForeground()->everyMinute();
+$scheduler->raw('cd c:/xampp/htdocs/iesd_support && php artisan sync',[],'IESD Support')->inForeground()->everyMinute();
+
+//$scheduler->raw('trello.bat',[],'Trello')->inForeground()->daily('07:00');
+
 
 
 // ... configure the scheduled jobs (see below) ...

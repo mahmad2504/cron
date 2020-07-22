@@ -1,0 +1,1 @@
+cd c:/xampp/curl && curl.exe "http://localhost/shipment-and-customs-clearance/sync?data=data"
