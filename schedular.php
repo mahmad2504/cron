@@ -11,6 +11,8 @@ $scheduler->raw('cd c:/xampp/htdocs/localshipments && php artisan sync',[],'LOCA
 $scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:calendar',[],'Sprint Calendar')->inForeground()->everyMinute();
 $scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:risk',[],'Risk Calendar')->inForeground()->everyMinute();
 $scheduler->raw('cd c:/xampp/htdocs/iesd_support && php artisan sync',[],'IESD Support')->inForeground()->everyMinute();
+$scheduler->raw('cd c:/xampp/htdocs/scriptwallet && php artisan zaahmad:updatepics',[],'IESD Update Epics')->inForeground()->everyMinute();
+
 
 //$scheduler->raw('trello.bat',[],'Trello')->inForeground()->daily('07:00');
 
