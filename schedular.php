@@ -10,9 +10,9 @@ $scheduler->raw('cd c:/xampp/htdocs/support_sla && php artisan sync:database',[]
 $scheduler->raw('cd c:/xampp/htdocs/localshipments && php artisan sync',[],'LOCALSHIPMENTS')->inForeground()->everyMinute();
 $scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:calendar',[],'Sprint Calendar')->inForeground()->everyMinute();
 $scheduler->raw('cd c:/xampp/htdocs/sos && php artisan sync:risk',[],'Risk Calendar')->inForeground()->everyMinute();
-$scheduler->raw('cd c:/xampp/htdocs/iesd_support && php artisan sync',[],'IESD Support')->inForeground()->everyMinute();
-$scheduler->raw('cd c:/xampp/htdocs/scriptwallet && php artisan zaahmad:updatepics',[],'IESD Update Epics')->inForeground()->everyMinute();
-
+$scheduler->raw('cd c:/xampp/htdocs/scriptwallet && php artisan zaahmad:updateepics',[],'IESD Update Epics')->inForeground()->everyMinute();
+$scheduler->raw('cd c:/xampp/htdocs/scriptwallet && php artisan zaahmad:updatesupportmatric',[],'IESD Support')->inForeground()->everyMinute();
+$scheduler->raw('cd c:/xampp/htdocs/scriptwallet && php artisan indos:checkaptupdate',[],'INDOS APT Update Check')->inForeground()->everyMinute();
 
 //$scheduler->raw('trello.bat',[],'Trello')->inForeground()->daily('07:00');
 
